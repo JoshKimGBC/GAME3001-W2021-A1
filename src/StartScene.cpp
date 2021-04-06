@@ -37,10 +37,10 @@ void StartScene::handleEvents()
 		TheGame::Instance()->quit();
 	}
 
-	if(EventManager::Instance().isKeyDown(SDL_SCANCODE_1))
+	/* if(EventManager::Instance().isKeyDown(SDL_SCANCODE_1))
 	{
 		TheGame::Instance()->changeSceneState(PLAY_SCENE);
-	}
+	} */
 }
 
 void StartScene::start()
@@ -55,7 +55,7 @@ void StartScene::start()
 	m_pStartLabel->setParent(this);
 	addChild(m_pStartLabel);
 
-	m_pInstructionsLabel = new Label("Press 1 to Play", "Consolas", 30, blue, glm::vec2(400.0f, 180.0f));
+	m_pInstructionsLabel = new Label("Click Play to Play", "Consolas", 30, blue, glm::vec2(400.0f, 180.0f));
 	m_pInstructionsLabel->setParent(this);
 	addChild(m_pInstructionsLabel);
 
