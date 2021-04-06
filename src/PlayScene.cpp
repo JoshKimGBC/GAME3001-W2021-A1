@@ -48,21 +48,26 @@ void PlayScene::handleEvents()
 		TheGame::Instance()->quit();
 	}
 
-	if (EventManager::Instance().isKeyDown(SDL_SCANCODE_1))
+	if (EventManager::Instance().isKeyDown(SDL_SCANCODE_Q))
 	{
 		TheGame::Instance()->changeSceneState(START_SCENE);
 	}
 
-	if (EventManager::Instance().isKeyDown(SDL_SCANCODE_2))
+	/* if (EventManager::Instance().isKeyDown(SDL_SCANCODE_2))
 	{
 		TheGame::Instance()->changeSceneState(END_SCENE);
-	}
+	} */
 }
 
 void PlayScene::start()
 {
 	// Set GUI Title
 	m_guiTitle = "Play Scene";
+
+	const SDL_Color blue = { 0, 60, 192, 255 };
+	m_pSteerLabel = new Label("(1) to seek - (2) to flee - (3) to arrive - (4) to arrive - (Q) to go back to start - (ESC) to Quit", "Consolas", 12, blue, glm::vec2(350.0f, 10.0f));
+	m_pSteerLabel->setParent(this);
+	addChild(m_pSteerLabel);
 
 	m_pTarget = new Target();
 	m_pTarget->getTransform()->position = glm::vec2(700.0f, 300.0f);

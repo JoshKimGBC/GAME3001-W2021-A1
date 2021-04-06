@@ -29,6 +29,8 @@ private:
 	
 	glm::vec2 m_mousePosition;
 
+	Label* m_pSteerLabel{};
+
 	SpaceShip* m_pSpaceShip;
 	Target* m_pTarget;
 	Obstacle* m_pObstacle;
